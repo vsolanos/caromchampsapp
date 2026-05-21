@@ -1,0 +1,876 @@
+/* v2.6 Theme tokens: central color palette for future adjustments. */
+/* v2.8 Theme tokens: central color palette requested by FECOBI/ASOBIGRIE. */
+:root,
+.theme-dark {
+  --color-brand-primary: #C62828;          /* Rojo institucional */
+  --color-brand-secondary: #0B4F8A;        /* Azul institucional */
+  --color-app-bg: #08111F;                 /* Azul negro profundo */
+  --color-surface: #101B2D;                /* Gris azulado oscuro */
+  --color-surface-alt: #17263D;            /* Azul grafito claro */
+  --color-border: #26364F;                 /* Gris azulado */
+  --color-text-main: #F8FAFC;              /* Blanco suave */
+  --color-text-muted: #94A3B8;             /* Gris medio */
+  --color-accent: #F4C542;                 /* Dorado institucional */
+  --color-highlight: #075985;              /* Celeste oscuro */
+  --color-highlight-text: #E0F2FE;         /* Celeste muy claro */
+  --color-success: #166534;                /* Verde oscuro */
+  --color-warning: #D97706;                /* Naranja ámbar */
+  --color-danger: #B91C1C;                 /* Rojo oscuro */
+  --color-table-header: #1E2B40;           /* Gris oscuro azulado */
+  --color-table-row: #111C2F;              /* Azul tabla oscuro */
+  --color-table-row-alt: #16243A;          /* Azul tabla alterno */
+  --color-classified-bg: #0E3A4A;          /* Azul petróleo profundo */
+  --color-finalized-bg: #075985;           /* Celeste oscuro */
+  --color-score: #38BDF8;                  /* Celeste brillante */
+  --color-points: #FACC15;                 /* Amarillo intenso */
+  --color-pdf-bg: #FFFFFF;                 /* Blanco puro */
+  --color-pdf-text: #0F172A;               /* Azul negro */
+  --color-pdf-header: #E2E8F0;             /* Gris azulado claro */
+
+  /* Extended aliases used by current components. */
+  --color-accent-dark: #D9A516;            /* Dorado oscuro */
+  --color-border-secondary: var(--color-border);
+  --color-text-secondary: #CBD5E1;         /* Gris claro */
+  --color-input-text: var(--color-text-main);
+  --color-table-header-text: var(--color-text-main);
+  --color-bracket-card-bg: var(--color-surface);
+  --color-bracket-card-text: var(--color-text-main);
+  --color-bracket-loser-text: var(--color-text-muted);
+  --color-bracket-connector: var(--color-accent-dark);
+  --color-pdf-text-secondary: #075985;     /* Celeste oscuro */
+  --color-pdf-text-muted: #1E3A8A;         /* Azul oscuro */
+  --color-pdf-classified-text: #075985;    /* Celeste oscuro */
+  --color-pdf-table-header: var(--color-pdf-header);
+  --color-pdf-table-border: #1E3A8A;       /* Azul oscuro */
+  --color-pdf-classified-bg: #E0F2FE;      /* Celeste */
+}
+
+.theme-light {
+  --color-brand-primary: #C62828;          /* Rojo institucional */
+  --color-brand-secondary: #0B4F8A;        /* Azul institucional */
+  --color-app-bg: #F6F8FB;                 /* Gris azulado muy claro */
+  --color-surface: #FFFFFF;                /* Blanco puro */
+  --color-surface-alt: #F0F7FB;            /* Azul muy claro */
+  --color-border: #D8E1EA;                 /* Gris claro */
+  --color-text-main: #0F172A;              /* Azul negro */
+  --color-text-muted: #64748B;             /* Gris medio */
+  --color-accent: #075985;                 /* Celeste oscuro */
+  --color-highlight: #DDF3FB;              /* Celeste pálido */
+  --color-highlight-text: #075985;         /* Celeste oscuro */
+  --color-success: #166534;                /* Verde oscuro */
+  --color-warning: #B45309;                /* Marrón ámbar */
+  --color-danger: #991B1B;                 /* Rojo oscuro intenso */
+  --color-table-header: #E2E8F0;           /* Gris azulado claro */
+  --color-table-row: #FFFFFF;              /* Blanco puro */
+  --color-table-row-alt: #F8FAFC;          /* Gris nieve */
+  --color-classified-bg: #E0F2FE;          /* Celeste muy claro */
+  --color-finalized-bg: #DDF3FB;           /* Celeste pálido */
+  --color-score: #0369A1;                  /* Azul medio */
+  --color-points: #B45309;                 /* Marrón ámbar */
+  --color-pdf-bg: #FFFFFF;                 /* Blanco puro */
+  --color-pdf-text: #0F172A;               /* Azul negro */
+  --color-pdf-header: #E2E8F0;             /* Gris azulado claro */
+
+  /* Extended aliases used by current components. */
+  --color-accent-dark: #0E7490;            /* Celeste medio */
+  --color-border-secondary: #CBD5E1;       /* Gris azulado claro */
+  --color-text-secondary: #475569;         /* Gris pizarra */
+  --color-input-text: var(--color-text-main);
+  --color-table-header-text: var(--color-text-main);
+  --color-bracket-card-bg: var(--color-surface);
+  --color-bracket-card-text: var(--color-text-main);
+  --color-bracket-loser-text: var(--color-text-muted);
+  --color-bracket-connector: var(--color-accent);
+  --color-pdf-text-secondary: #075985;     /* Celeste oscuro */
+  --color-pdf-text-muted: #1E3A8A;         /* Azul oscuro */
+  --color-pdf-classified-text: #075985;    /* Celeste oscuro */
+  --color-pdf-table-header: var(--color-pdf-header);
+  --color-pdf-table-border: #1E3A8A;       /* Azul oscuro */
+  --color-pdf-classified-bg: #E0F2FE;      /* Celeste */
+}
+
+
+/* Dark-mode overrides requested by the user. */
+.theme-dark .card,
+.theme-dark .topbar,
+.theme-dark .round-card,
+.theme-dark .bracket-hero-card,
+.theme-dark .bracket-premium-panel,
+.theme-dark .bracket-tabular-panel,
+.theme-dark .bracket-table-wrap,
+.theme-dark .group-agenda-wrap,
+.theme-dark .report-standings-card,
+.theme-dark .control-chip,
+.theme-dark .view-toggle {
+  border-color: color-mix(in srgb, var(--color-border) 52%, transparent) !important;
+}
+
+.theme-dark,
+.theme-dark .main,
+.theme-dark .card,
+.theme-dark td,
+.theme-dark .header-title,
+.theme-dark .section-title h2,
+.theme-dark .stat-value,
+.theme-dark .topbar-user,
+.theme-dark .bracket-name-line,
+.theme-dark .tabular-name {
+  color: var(--color-text-main) !important;
+}
+
+.theme-dark .input,
+.theme-dark select.input,
+.theme-dark textarea.input {
+  color: var(--color-input-text) !important;
+  border-color: color-mix(in srgb, var(--color-border) 45%, transparent) !important;
+}
+
+.theme-dark .badge.success,
+.theme-dark .agenda-status-cell,
+.theme-dark .continuous-winner {
+  color: var(--color-success) !important;
+}
+
+.theme-dark th,
+.theme-dark .group-agenda-table th,
+.theme-dark .report-standings-table th,
+.theme-dark .bracket-tabular-table th {
+  background: var(--color-table-header) !important;
+  color: var(--color-table-header-text) !important;
+  border-color: color-mix(in srgb, var(--color-border) 45%, transparent) !important;
+}
+
+.theme-dark .continuous-match,
+.theme-dark .bracket-player-line,
+.theme-dark .bracket-player,
+.theme-dark .bracket-match-card {
+  background: var(--color-bracket-card-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-bracket-card-text) !important;
+}
+
+.theme-dark .continuous-match-head,
+.theme-dark .continuous-match-head p,
+.theme-dark .bracket-player-line .bracket-stat-row,
+.theme-dark .bracket-player-line .bracket-serie-row,
+.theme-dark .bracket-player-line:not(.winner) .bracket-name-line,
+.theme-dark .bracket-player-line:not(.winner) .small {
+  color: var(--color-bracket-loser-text) !important;
+}
+
+.theme-dark .bracket-player-line.winner {
+  background: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+.theme-dark .bracket-player-line.winner .bracket-name-line,
+.theme-dark .bracket-player-line.winner .bracket-stat-row,
+.theme-dark .bracket-player-line.winner .bracket-serie-row,
+.theme-dark .bracket-player-line.winner .small,
+.theme-dark .bracket-player-line.winner b {
+  color: var(--color-highlight-text) !important;
+}
+
+.theme-dark .continuous-match::after,
+.theme-dark .continuous-match.source-linked::before,
+.theme-dark .bracket-round-premium:not(:last-child) .continuous-match.completed::after {
+  border-top-color: var(--color-bracket-connector) !important;
+}
+
+.theme-dark .bracket-score.winner,
+.theme-dark .bracket-score {
+  border: 1px solid var(--color-border) !important;
+}
+
+/* PDF color tokens and robust header spacing. */
+@media print {
+  body.printing-pdf {
+    background: var(--color-pdf-bg) !important;
+    color: var(--color-pdf-text) !important;
+  }
+
+  body.printing-pdf .pdf-print-header {
+    top: 4mm !important;
+    left: 8mm !important;
+    right: 8mm !important;
+    min-height: 24mm !important;
+    max-height: 27mm !important;
+    padding: 3mm 4mm !important;
+  }
+
+  /* Page top margin now reserves the repeated fixed header on every printed page.
+     Therefore content scopes must not also add large padding. */
+  body.printing-pdf .groups-print-scope,
+  body.printing-pdf .reports-export-root,
+  body.printing-pdf .close-export-root,
+  body.printing-pdf .bracket-print-scope {
+    padding-top: 0 !important;
+  }
+
+  /* Extra protection for content blocks forced to a new page: start below the fixed header. */
+  body.printing-pdf:not(.pdf-fit-one-page) .group-print-card,
+  body.printing-pdf:not(.pdf-fit-one-page) .groups-final-order-print,
+  body.printing-pdf:not(.pdf-fit-one-page) .bracket-tabular-section,
+  body.printing-pdf:not(.pdf-fit-one-page) .reports-export-root > .card,
+  body.printing-pdf:not(.pdf-fit-one-page) .close-export-root > .card {
+    margin-top: 8mm !important;
+  }
+
+  body.printing-pdf th,
+  body.printing-pdf .group-agenda-table th,
+  body.printing-pdf .report-standings-table th,
+  body.printing-pdf .bracket-tabular-table th {
+    background: var(--color-pdf-table-header) !important;
+    color: var(--color-pdf-text) !important;
+    border: 1px solid var(--color-pdf-table-border) !important;
+  }
+
+  body.printing-pdf td,
+  body.printing-pdf .group-agenda-table td,
+  body.printing-pdf .report-standings-table td,
+  body.printing-pdf .bracket-tabular-table td {
+    border: 1px solid var(--color-pdf-table-border) !important;
+  }
+}
+
+/* v2.8 final application of global tokens across the current UI. */
+.app-shell {
+  background: var(--color-app-bg) !important;
+  color: var(--color-text-main) !important;
+}
+.header,
+.topbar,
+.card,
+.round-card,
+.control-chip,
+.view-toggle,
+.bracket-premium-panel,
+.bracket-tabular-panel,
+.group-agenda-wrap,
+.report-standings-card {
+  background: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-main) !important;
+}
+.header-title,
+.section-title h2,
+.stat-value,
+.card h2,
+.card h3,
+.card b,
+td,
+.player-name,
+.bracket-name-line,
+.tabular-name {
+  color: var(--color-text-main) !important;
+}
+.small,
+.field-hint,
+.section-title p,
+.stat-label,
+.stat-hint,
+.card p {
+  color: var(--color-text-muted) !important;
+}
+.tab.active,
+.btn.primary {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+.theme-dark .tab.active,
+.theme-dark .btn.primary {
+  color: #08111F !important;
+}
+.theme-light .tab.active,
+.theme-light .btn.primary {
+  color: #FFFFFF !important;
+}
+.btn.success {
+  background: var(--color-success) !important;
+}
+.btn.warning {
+  background: var(--color-warning) !important;
+}
+.btn.danger {
+  background: var(--color-danger) !important;
+}
+.input,
+select.input,
+textarea.input {
+  background: var(--color-surface-alt) !important;
+  color: var(--color-input-text) !important;
+  border-color: var(--color-border) !important;
+}
+table {
+  color: var(--color-text-main) !important;
+}
+th,
+.group-agenda-table th,
+.report-standings-table th,
+.bracket-tabular-table th {
+  background: var(--color-table-header) !important;
+  color: var(--color-table-header-text) !important;
+  border-color: var(--color-border) !important;
+}
+td,
+.group-agenda-table td,
+.report-standings-table td,
+.bracket-tabular-table td {
+  border-color: var(--color-border) !important;
+}
+tbody tr:nth-child(odd) td {
+  background-color: var(--color-table-row) !important;
+}
+tbody tr:nth-child(even) td {
+  background-color: var(--color-table-row-alt) !important;
+}
+.qualified-row td,
+.classified-row td {
+  background-color: var(--color-classified-bg) !important;
+}
+.completed-row td,
+.agenda-completed-row td,
+.completed-row-card {
+  background-color: var(--color-finalized-bg) !important;
+  color: var(--color-highlight-text) !important;
+}
+.agenda-score-cell,
+.bracket-score,
+.stat-score,
+.avg-cell {
+  color: var(--color-score) !important;
+}
+.points-cell,
+.score-points {
+  color: var(--color-points) !important;
+}
+.bracket-player-line,
+.continuous-match,
+.bracket-match-card {
+  background: var(--color-bracket-card-bg) !important;
+  color: var(--color-bracket-card-text) !important;
+  border-color: var(--color-border) !important;
+}
+.bracket-player-line:not(.winner),
+.bracket-player-line:not(.winner) .bracket-name-line,
+.bracket-player-line:not(.winner) .small {
+  color: var(--color-bracket-loser-text) !important;
+}
+.bracket-player-line.winner,
+.continuous-winner {
+  background: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
+.continuous-match::after,
+.continuous-match.source-linked::before,
+.bracket-round-premium:not(:last-child) .continuous-match.completed::after {
+  border-top-color: var(--color-bracket-connector) !important;
+  border-right-color: var(--color-bracket-connector) !important;
+  border-bottom-color: var(--color-bracket-connector) !important;
+}
+
+@media print {
+  body.printing-pdf {
+    background: var(--color-pdf-bg) !important;
+    color: var(--color-pdf-text) !important;
+  }
+  body.printing-pdf .section-title h2,
+  body.printing-pdf h1,
+  body.printing-pdf h2,
+  body.printing-pdf h3,
+  body.printing-pdf b,
+  body.printing-pdf td {
+    color: var(--color-pdf-text) !important;
+  }
+  body.printing-pdf .section-title p,
+  body.printing-pdf .pdf-title-block p,
+  body.printing-pdf .pdf-meta-row span {
+    color: var(--color-pdf-text-secondary) !important;
+  }
+  body.printing-pdf .small,
+  body.printing-pdf .field-hint,
+  body.printing-pdf .pdf-kicker {
+    color: var(--color-pdf-text-muted) !important;
+  }
+  body.printing-pdf th,
+  body.printing-pdf .group-agenda-table th,
+  body.printing-pdf .report-standings-table th,
+  body.printing-pdf .bracket-tabular-table th {
+    background: var(--color-pdf-header) !important;
+    color: var(--color-pdf-text) !important;
+    border: 1px solid var(--color-pdf-table-border) !important;
+  }
+  body.printing-pdf td,
+  body.printing-pdf .group-agenda-table td,
+  body.printing-pdf .report-standings-table td,
+  body.printing-pdf .bracket-tabular-table td {
+    border: 1px solid var(--color-pdf-table-border) !important;
+  }
+  body.printing-pdf .qualified-row td,
+  body.printing-pdf .classified-row td,
+  body.printing-pdf .qualified-row td b {
+    color: var(--color-pdf-classified-text) !important;
+  }
+  body.printing-reports:not(.pdf-fit-one-page) .report-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+    padding-top: var(--pdf-header-gap, 36mm) !important;
+    box-sizing: border-box !important;
+  }
+  body.printing-reports:not(.pdf-fit-one-page) .report-page-break.report-page-first {
+    break-before: auto !important;
+    page-break-before: auto !important;
+    padding-top: 0 !important;
+  }
+  body.printing-reports.pdf-fit-one-page .report-page-break {
+    break-before: auto !important;
+    page-break-before: auto !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* v3.0 scoped color and PDF refinements. */
+.theme-dark .players-module .section-title p,
+.theme-dark .players-module .stat-hint,
+.theme-dark .players-module .small,
+.theme-dark .players-module .card p,
+.theme-dark .players-module .history-chip,
+.theme-dark .players-module .player-submeta,
+.theme-dark .players-module .country-label span {
+  color: #075985 !important; /* Celeste oscuro */
+}
+.theme-dark .players-module .field-hint {
+  color: #334155 !important; /* Gris azulado */
+}
+.theme-dark .players-module .input:disabled,
+.theme-dark .players-module select.input:disabled,
+.theme-dark .players-module textarea.input:disabled {
+  background: #334155 !important; /* Gris azulado */
+  color: #26364F !important; /* Gris azulado oscuro */
+  border-color: #334155 !important;
+}
+.theme-dark .players-module .btn.soft {
+  background: #334155 !important; /* Gris azulado */
+  color: #E0F2FE !important;
+}
+.theme-dark .players-module .btn:disabled {
+  background: #334155 !important; /* Gris azulado */
+  color: #26364F !important; /* Gris azulado oscuro */
+  opacity: 1 !important;
+}
+.theme-dark .players-module .text-disabled,
+.theme-dark .players-module [aria-disabled="true"] {
+  color: #26364F !important; /* Gris azulado oscuro */
+}
+
+.theme-light .groups-export-root .qualified-row td,
+.theme-light .groups-export-root .classified-row td,
+.theme-light .groups-final-order-print .qualified-row td,
+.theme-light .groups-final-order-print .classified-row td {
+  background: #075985 !important; /* Celeste oscuro */
+  color: #E0F2FE !important;
+}
+.theme-light .groups-export-root .qualified-row td b,
+.theme-light .groups-export-root .classified-row td b,
+.theme-light .groups-final-order-print .qualified-row td b,
+.theme-light .groups-final-order-print .classified-row td b,
+.theme-light .groups-export-root .qualified-row .small,
+.theme-light .groups-final-order-print .qualified-row .small {
+  color: #E0F2FE !important;
+}
+.theme-light .groups-export-root .agenda-completed-row td,
+.theme-light .groups-export-root .completed-row td {
+  color: #1E3A5F !important; /* Azul oscuro */
+}
+.theme-light .groups-export-root .agenda-status-cell .badge.success {
+  background: #CBD5E1 !important; /* Gris azulado claro */
+  color: #1E3A5F !important;
+}
+
+@media print {
+  body.printing-pdf {
+    color-scheme: light !important;
+    --color-app-bg: #FFFFFF !important;
+    --color-surface: #FFFFFF !important;
+    --color-surface-alt: #F8FAFC !important;
+    --color-border: #CBD5E1 !important;
+    --color-text-main: #0F172A !important;
+    --color-text-secondary: #475569 !important;
+    --color-text-muted: #334155 !important;
+    --color-table-header: #E0F2FE !important;
+    --color-table-row: #FFFFFF !important;
+    --color-table-row-alt: #F8FAFC !important;
+    --color-classified-bg: #BAE6FD !important;
+    --color-finalized-bg: #E0F2FE !important;
+    --color-highlight: #075985 !important;
+    --color-highlight-text: #075985 !important;
+    --color-pdf-bg: #FFFFFF !important;
+    --color-pdf-text: #0F172A !important;
+    --color-pdf-text-secondary: #075985 !important;
+    --color-pdf-text-muted: #334155 !important;
+    --color-pdf-header: #E0F2FE !important;
+    --color-pdf-table-header: #E0F2FE !important;
+    --color-pdf-table-border: #1E3A8A !important;
+    --color-pdf-classified-bg: #BAE6FD !important;
+    --color-pdf-classified-text: #075985 !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+  body.printing-pdf .app-shell,
+  body.printing-pdf .main,
+  body.printing-pdf .card,
+  body.printing-pdf .round-card,
+  body.printing-pdf details,
+  body.printing-pdf .group-agenda-wrap,
+  body.printing-pdf .report-standings-card,
+  body.printing-pdf .bracket-premium-panel,
+  body.printing-pdf .bracket-tabular-panel,
+  body.printing-pdf .continuous-match,
+  body.printing-pdf .bracket-match-card,
+  body.printing-pdf .completed-row-card {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border-color: #CBD5E1 !important;
+    box-shadow: none !important;
+  }
+  body.printing-pdf table,
+  body.printing-pdf th,
+  body.printing-pdf td {
+    color: #0F172A !important;
+  }
+  body.printing-pdf th,
+  body.printing-pdf .group-agenda-table th,
+  body.printing-pdf .report-standings-table th,
+  body.printing-pdf .bracket-tabular-table th {
+    background: #E0F2FE !important;
+    color: #0F172A !important;
+    border: 1px solid #1E3A8A !important;
+  }
+  body.printing-pdf td,
+  body.printing-pdf .group-agenda-table td,
+  body.printing-pdf .report-standings-table td,
+  body.printing-pdf .bracket-tabular-table td {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1px solid #1E3A8A !important;
+  }
+  body.printing-pdf .qualified-row td,
+  body.printing-pdf .classified-row td {
+    background: #BAE6FD !important;
+    color: #075985 !important;
+  }
+  body.printing-pdf .qualified-row td b,
+  body.printing-pdf .classified-row td b {
+    color: #075985 !important;
+  }
+  body.printing-pdf .small,
+  body.printing-pdf .field-hint,
+  body.printing-pdf .pdf-kicker {
+    color: #334155 !important;
+  }
+  body.printing-pdf .section-title p,
+  body.printing-pdf .pdf-title-block p,
+  body.printing-pdf .pdf-meta-row span {
+    color: #075985 !important;
+  }
+  body.printing-matches .main > *:not(.matches-export-root),
+  body.printing-schedule .main > *:not(.schedule-export-root) {
+    display: none !important;
+  }
+  body.printing-matches .matches-control-card,
+  body.printing-schedule .schedule-control-card {
+    display: none !important;
+  }
+  body.printing-matches .matches-export-root,
+  body.printing-matches .matches-print-scope,
+  body.printing-schedule .schedule-export-root,
+  body.printing-schedule .schedule-print-scope {
+    display: block !important;
+    width: 100% !important;
+  }
+  body.printing-pdf .matches-print-scope,
+  body.printing-pdf .schedule-print-scope {
+    padding-top: var(--pdf-header-gap, 40mm) !important;
+    box-sizing: border-box !important;
+    color: #0F172A !important;
+  }
+  body.printing-pdf.pdf-fit-one-page .matches-print-scope,
+  body.printing-pdf.pdf-fit-one-page .schedule-print-scope {
+    padding-top: 0 !important;
+  }
+  body.printing-groups:not(.pdf-fit-one-page) .groups-final-order-continuation {
+    break-before: page !important;
+    page-break-before: always !important;
+    padding-top: var(--pdf-header-gap, 40mm) !important;
+    box-sizing: border-box !important;
+  }
+  body.printing-matches:not(.pdf-fit-one-page) .completed-row-card,
+  body.printing-schedule:not(.pdf-fit-one-page) .card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  body.printing-matches .matches-print-scope input[type="checkbox"] {
+    display: none !important;
+  }
+}
+
+/* v3.1 PDF and report-selection refinements */
+.pdf-blank-first-page { display: none; }
+.report-print-section-picker {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-border) 35%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--color-surface-alt) 78%, transparent);
+}
+.report-print-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+.report-print-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+.report-print-check input {
+  accent-color: var(--color-accent);
+}
+.theme-light .first-phase-qualified-report .section-title h2,
+.theme-light .first-phase-qualified-report .section-title p,
+.theme-light .first-phase-qualified-report th,
+.theme-light .first-phase-qualified-report td,
+.theme-light .first-phase-qualified-report .player-submeta,
+.theme-light .first-phase-qualified-report b {
+  color: inherit;
+}
+.theme-light .first-phase-qualified-report.report-standings-card {
+  background: var(--color-surface) !important;
+  border-color: var(--color-border-secondary) !important;
+}
+.theme-light .first-phase-qualified-report .report-standings-table th {
+  background: var(--color-table-header) !important;
+  color: var(--color-text-main) !important;
+}
+.theme-light .first-phase-qualified-report .report-standings-table td {
+  background: var(--color-table-row) !important;
+  color: var(--color-text-main) !important;
+}
+.theme-light .first-phase-qualified-report .report-standings-table .qualified-row td {
+  background: var(--color-classified-bg) !important;
+  color: var(--color-highlight) !important;
+}
+
+@media print {
+  /* PDFs always print with the light palette, even when the app is in dark mode. */
+  body.printing-pdf.pdf-force-light .app-shell,
+  body.printing-pdf.pdf-force-light .theme-dark,
+  body.printing-pdf.pdf-force-light .theme-light {
+    --color-app-bg: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F8FAFC;
+    --color-border: #D8E1EA;
+    --color-border-secondary: #CBD5E1;
+    --color-text-main: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748B;
+    --color-table-header: #E2E8F0;
+    --color-table-row: #FFFFFF;
+    --color-table-row-alt: #F8FAFC;
+    --color-classified-bg: #E0F2FE;
+    --color-finalized-bg: #DDF3FB;
+    --color-highlight: #075985;
+    --color-highlight-text: #075985;
+    --color-score: #0369A1;
+    --color-points: #B45309;
+    --color-pdf-bg: #FFFFFF;
+    --color-pdf-text: #0F172A;
+    --color-pdf-header: #E2E8F0;
+    --color-pdf-text-secondary: #075985;
+    --color-pdf-text-muted: #1E3A8A;
+    --color-pdf-classified-text: #075985;
+    --color-pdf-table-header: #E2E8F0;
+    --color-pdf-table-border: #1E3A8A;
+    --color-pdf-classified-bg: #E0F2FE;
+  }
+  body.printing-pdf.pdf-force-light,
+  body.printing-pdf.pdf-force-light .app-shell,
+  body.printing-pdf.pdf-force-light .main,
+  body.printing-pdf.pdf-force-light .card,
+  body.printing-pdf.pdf-force-light .round-card,
+  body.printing-pdf.pdf-force-light details,
+  body.printing-pdf.pdf-force-light .report-standings-card,
+  body.printing-pdf.pdf-force-light .bracket-premium-panel,
+  body.printing-pdf.pdf-force-light .bracket-tabular-panel,
+  body.printing-pdf.pdf-force-light .face-grid {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+  body.printing-pdf.pdf-force-light .section-title h2,
+  body.printing-pdf.pdf-force-light .stat-value,
+  body.printing-pdf.pdf-force-light td,
+  body.printing-pdf.pdf-force-light b {
+    color: #0F172A !important;
+  }
+  body.printing-pdf.pdf-force-light .section-title p,
+  body.printing-pdf.pdf-force-light .small,
+  body.printing-pdf.pdf-force-light .field-hint,
+  body.printing-pdf.pdf-force-light .player-submeta {
+    color: #1E3A8A !important;
+  }
+  body.printing-pdf.pdf-force-light th,
+  body.printing-pdf.pdf-force-light .report-standings-table th,
+  body.printing-pdf.pdf-force-light .group-agenda-table th,
+  body.printing-pdf.pdf-force-light .bracket-tabular-table th {
+    background: #E2E8F0 !important;
+    color: #0F172A !important;
+    border: 1px solid #1E3A8A !important;
+  }
+  body.printing-pdf.pdf-force-light td,
+  body.printing-pdf.pdf-force-light .report-standings-table td,
+  body.printing-pdf.pdf-force-light .group-agenda-table td,
+  body.printing-pdf.pdf-force-light .bracket-tabular-table td {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1px solid #1E3A8A !important;
+  }
+  body.printing-pdf.pdf-force-light .qualified-row td,
+  body.printing-pdf.pdf-force-light .classified-row td {
+    background: #E0F2FE !important;
+    color: #075985 !important;
+  }
+  /* Blank first printed page. The browser dialog cannot be forced to select page 2 automatically, but the first page is intentionally blank for manual page range 2-N. */
+  body.printing-pdf .pdf-blank-first-page {
+    display: block !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    break-after: page !important;
+    page-break-after: always !important;
+    background: #FFFFFF !important;
+  }
+  body.printing-pdf.pdf-fit-one-page .pdf-blank-first-page {
+    display: none !important;
+  }
+  body.printing-reports:not(.pdf-fit-one-page) .report-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+}
+
+/* v3.2 requested color and PDF refinements */
+.classification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
+}
+.classification-badge.class-calificado {
+  background: var(--color-classified-bg) !important;
+  color: var(--color-highlight-text) !important;
+}
+.classification-badge.class-no-definido {
+  background: color-mix(in srgb, var(--color-warning) 18%, transparent) !important;
+  color: var(--color-warning) !important;
+}
+.classification-badge.class-no-calificado {
+  background: var(--color-surface-alt) !important;
+  color: var(--color-text-muted) !important;
+}
+
+.theme-dark .classification-badge.class-no-definido {
+  color: #E0F2FE !important; /* Azul claro */
+  background: rgba(224, 242, 254, .10) !important;
+  border: 1px solid rgba(224, 242, 254, .28) !important;
+}
+.theme-dark .classification-badge.class-no-calificado {
+  color: #075985 !important; /* Celeste oscuro */
+  background: rgba(7, 89, 133, .16) !important;
+  border: 1px solid rgba(7, 89, 133, .32) !important;
+}
+.theme-dark .match-active-data-cell.has-result-data,
+.theme-dark .match-active-data-cell.has-result-data input,
+.theme-dark .match-active-data-cell.has-result-data .input {
+  color: #38BDF8 !important; /* Azul / celeste brillante para datos capturados */
+  font-weight: 900 !important;
+}
+.theme-dark .match-active-data-cell.has-result-data input,
+.theme-dark .match-active-data-cell.has-result-data .input {
+  border-color: rgba(56, 189, 248, .55) !important;
+}
+
+.theme-light .continuous-match-head b,
+.theme-light .continuous-match-head strong {
+  color: #1E3A8A !important; /* Azul oscuro para ronda */
+}
+.theme-light .continuous-match-head p {
+  color: #E0F2FE !important; /* Azul claro para fecha/hora */
+}
+.theme-light .bracket-score,
+.theme-light .bracket-score.winner {
+  color: #94A3B8 !important; /* Gris claro para marcadores */
+}
+
+@media print {
+  /* v3.2: remove the intentionally blank first page from every PDF. */
+  body.printing-pdf .pdf-blank-first-page,
+  body.printing-pdf.pdf-fit-one-page .pdf-blank-first-page {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+}
+
+
+/* v3.3 targeted fixes: match data colors, PDF classification and non-forced page header spacing. */
+.theme-dark .match-result-admin-cell,
+.theme-dark .match-result-admin-cell .field-label,
+.theme-dark .match-result-admin-cell select.input,
+.theme-dark .match-result-admin-cell .input {
+  color: #38BDF8 !important;
+  font-weight: 900 !important;
+}
+.theme-dark .match-result-admin-cell select.input,
+.theme-dark .match-result-admin-cell .input {
+  border-color: rgba(56, 189, 248, .55) !important;
+}
+
+@media print {
+  body.printing-pdf .classification-badge.class-no-definido {
+    color: #1E3A8A !important; /* Azul oscuro */
+    background: #E0F2FE !important;
+    border: 1px solid #1E3A8A !important;
+  }
+  /* Do not move the repeated header. Instead, reserve the page margin for every automatic page continuation. */
+  body.printing-pdf .groups-print-scope,
+  body.printing-pdf .reports-export-root,
+  body.printing-pdf .close-export-root,
+  body.printing-pdf .bracket-print-scope,
+  body.printing-pdf .matches-print-scope,
+  body.printing-pdf .schedule-print-scope {
+    padding-top: 0 !important;
+    box-sizing: border-box !important;
+  }
+  body.printing-groups:not(.pdf-fit-one-page) .group-print-card,
+  body.printing-groups:not(.pdf-fit-one-page) .groups-final-order-page,
+  body.printing-groups:not(.pdf-fit-one-page) .groups-final-order-print,
+  body.printing-bracket:not(.pdf-fit-one-page) .bracket-tabular-section,
+  body.printing-reports:not(.pdf-fit-one-page) .report-page-break,
+  body.printing-close:not(.pdf-fit-one-page) .close-page-break {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "caromchampsapp",
+  "version": "6.6.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "check:syntax": "node --check src/App.js && node --check src/main.js && node --check src/data/defaults.js && node --check src/lib/tournament.js && node --check src/lib/print.js && node --check src/lib/scoreSheets.js && node --check src/components/ui.js && node --check src/components/Print.js && node --check src/components/DataTableCarom.js && node --check src/components/PlayerHistory.js && node --check src/modules/Players.js && node --check src/modules/Setup.js && node --check src/modules/Groups.js && node --check src/modules/Capture.js && node --check src/modules/Schedule.js && node --check src/modules/Bracket.js && node --check src/modules/Reports.js && node --check src/modules/Maintenance.js && node --check src/modules/Configuration.js && node --check src/modules/Officials.js && node --check src/modules/CloseTournament.js && node --check src/modules/Audit.js && node --check src/modules/Championships.js && node --check src/lib/supabase.js && node --check src/lib/countries.js && node --check src/components/AuthGate.js && node --check src/components/SharedView.js && node --check src/components/ProfileSettings.js && node --check src/modules/Ranking.js && node --check vite.config.js && node --check scripts/clean-dev-cache.js",
+    "verify:registry": "npm.cmd config get registry",
+    "dev:network": "vite --host 0.0.0.0 --port 5173 --strictPort",
+    "dev:clean": "node scripts/clean-dev-cache.js",
+    "start:local": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "start:preview": "vite preview --host 127.0.0.1 --port 4173"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.86.0",
+    "@vitejs/plugin-react": "6.0.0",
+    "jsqr": "^1.4.0",
+    "qrcode.react": "^4.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "vite": "^8.0.14"
+  }
+}
